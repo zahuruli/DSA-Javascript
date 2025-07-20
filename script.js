@@ -1,22 +1,61 @@
-let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 6, 7];
 let len = data.length;
+let pos = undefined;
 
-function removeElement() {
-  let pos = parseInt(document.getElementById("position").value);
-  if (!typeof pos == "number" || isNaN(pos)) {
-    alert(`position ${pos} is not a number`);
-  } else if (pos < len) {
-    for (let i = pos; i < len; i++) {
-      data[i] = data[i + 1];
-    }
-    data.length = data.length - 1;
-    console.log(data);
+function searchElement() {
+  //if not found return undefined
+  let val = parseInt(document.getElementById("val").value);
+  if (!typeof val == "number" || isNaN(val)) {
+    alert(`value ${val} is not a number`);
   } else {
-    alert(`position ${pos} is not valid`);
+    for (let i = 0; i < len; i++) {
+      if (data[i] === val) {
+        pos = i;
+        break;
+      }
+    }
+
+    console.log(`Index is ${pos}`);
+    alert(`Index is ${pos}`);
+    document.getElementById("val").value = "";
   }
 }
 
 function resetValue() {
-  document.getElementById("position").value = "";
-  document.getElementById("number").value = "";
+  document.getElementById("val").value = "";
+}
+
+//builtin indexOf:
+function indexOf() {
+  //if not found return -1
+
+  let val = parseInt(document.getElementById("val").value);
+
+  let index = data.indexOf(val);
+  console.log(`Index is ${index}`);
+  alert(`Index is ${index}`);
+  document.getElementById("val").value = "";
+}
+
+//builtin indexOf:
+function findIndex() {
+  //if not found return -1
+
+  let val = parseInt(document.getElementById("val").value);
+
+  let index = data.findIndex((v) => v === val);
+  console.log(`Index is ${index}`);
+  alert(`Index is ${index}`);
+  document.getElementById("val").value = "";
+}
+//builtin indexOf:
+function findLastIndex() {
+  //if not found return -1
+
+  let val = parseInt(document.getElementById("val").value);
+
+  let index = data.findLastIndex((v) => v === val);
+  console.log(`Index is ${index}`);
+  alert(`Index is ${index}`);
+  document.getElementById("val").value = "";
 }
