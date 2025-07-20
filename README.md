@@ -36,5 +36,5 @@ Welcome to my **DSA in JavaScript** journey! This repository contains my daily p
 Clone the repo and explore topics at your own pace:
 
 ```bash
-git clone https://github.com/your-username/dsa-js.git
+git clone https://github.com/zahuruli/DSA-Javascript.git
 cd dsa-js
