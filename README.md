@@ -37,4 +37,4 @@ Clone the repo and explore topics at your own pace:
 
 ```bash
 git clone https://github.com/zahuruli/DSA-Javascript.git
-cd dsa-js
+cd DSA-Javascript
