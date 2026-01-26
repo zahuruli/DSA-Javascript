@@ -1,11 +1,18 @@
-function deleteElement(position) {
-  let data = [9, 45, 2, 8, 45, 23, 7, 78, 0, 11, 41, 77];
+let data = [9, 45, 2, 8, 45, 23, 7, 78, 0, 11, 41, 77];
+let index = undefined;
+function searchElementIndex(el) {
   console.log(data);
-  for (let i = position; i < data.length - 1; i++) {
-    data[i] = data[i + 1];
+  for (let i = 0; i <= data.length - 1; i++) {
+    if (data[i] == el) {
+      index = i;
+      break;
+    }
   }
-  data.length = data.length - 1;
-  console.log(data);
+  if (index == undefined) {
+    console.log(`Element not found`);
+  } else {
+    console.log(`Element ${el} found at position ${index}`);
+  }
 }
-
-deleteElement(3);
+console.log(data.indexOf(0));
+searchElementIndex(0);
