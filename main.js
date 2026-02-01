@@ -1,22 +1,20 @@
-//basic recursion:
-
-// function myFunction(x) {
-//   console.log(x);
-//   if (x < 10) {
-//     myFunction(x + 1);
-//   }
-// }
-// let data = 0;
-// myFunction(0);
-
-//factorial calculation by recursion:
-
-function factorial(x) {
-  if (x == 0) {
-    return 1;
+let totalApple = 0;
+let money = 100;
+let applePrice = 10;
+function buyApple(x) {
+  if (x > 0) {
+    console.log(`I have Money: ${x} Apple: ${totalApple} `);
+    buyMore(x);
   } else {
-    return x * factorial(x - 1);
+    console.log(
+      `I dont have more money to buy any apple . Total apple :${totalApple}`,
+    );
   }
 }
 
-console.log(factorial(5));
+function buyMore(x) {
+  totalApple++;
+  buyApple(x - applePrice);
+}
+
+buyApple(money);
