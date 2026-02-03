@@ -1,12 +1,39 @@
-let data = [9, 45, 2, 8, 45, 23, 7, 78, 0, 11, 41, 77];
-console.log(data);
-function CustomReverse(start, end) {
-  if (start <= end) {
-    tepm = data[start];
-    data[start] = data[end];
-    data[end] = tepm;
-    CustomReverse(start + 1, end - 1);
+let data = [];
+let currentSize = 0;
+let max = 5;
+
+function PushElement(e) {
+  if (currentSize <= max) {
+    data[currentSize] = e;
+    currentSize++;
+  } else {
+    console.log("Stack is full");
   }
 }
-CustomReverse(0, data.length - 1);
-console.log(data);
+
+function PopElement() {
+  if (currentSize > 0) {
+    let lastRemoveItems = data[currentSize - 1];
+    currentSize -= 1;
+    data.length = currentSize;
+    return lastRemoveItems;
+  } else {
+    console.log("Stack is empty!");
+  }
+}
+
+function ReverseStr(item) {
+  for (let i = 0; i < item.length; i++) {
+    PushElement(item[i]);
+  }
+  for (let i = 0; i < item.length; i++) {
+    let rmvItem = PopElement();
+    item[i] = rmvItem;
+  }
+}
+
+let MyName = "zahurul";
+let str = MyName.split("");
+
+ReverseStr(str);
+console.log(str);
